@@ -1,0 +1,23 @@
+services:
+  gauchOS-voice-agent:
+    build: .
+    ports:
+      - "7860:7860"
+    environment:
+      - DEEPGRAM_API_KEY=${DEEPGRAM_API_KEY}
+      - CARTESIA_API_KEY=${CARTESIA_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - DAILY_API_KEY=${DAILY_API_KEY}
+      - GAUCHOSHQ_EDGE_URL=${GAUCHOSHQ_EDGE_URL}
+      - GAUCHOSHQ_EDGE_KEY=${GAUCHOSHQ_EDGE_KEY}
+      - ESTABLECIMIENTO_ID=${ESTABLECIMIENTO_ID}
+      - KAPSO_API_KEY=${KAPSO_API_KEY}
+      - HOST=0.0.0.0
+      - PORT=7860
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7860/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
