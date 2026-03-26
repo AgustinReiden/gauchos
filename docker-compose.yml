@@ -11,7 +11,7 @@ services:
       - GAUCHOSHQ_EDGE_URL=${GAUCHOSHQ_EDGE_URL}
       - GAUCHOSHQ_EDGE_KEY=${GAUCHOSHQ_EDGE_KEY}
       - ESTABLECIMIENTO_ID=${ESTABLECIMIENTO_ID}
-      - KAPSO_API_KEY=${KAPSO_API_KEY}
+      - CORS_ORIGINS=${CORS_ORIGINS:-https://shycia.com.ar}
       - HOST=0.0.0.0
       - PORT=7860
     restart: unless-stopped
