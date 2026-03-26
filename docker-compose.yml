@@ -1,5 +1,5 @@
 services:
-  gauchOS-voice-agent:
+  gauchos-voice-agent:
     build: .
     ports:
       - "7860:7860"
